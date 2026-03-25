@@ -4,9 +4,31 @@
 <title>My Website</title>
 </head>
 <body>
-<h1>CC64's Space Program Mangagement!</h1>
+<fieldset>
+<h1><div id = "title">CC64's Space Program Mangagement!</div></h1>
+</fieldset>
+<h2><div id = "top_buttons"></div></h2>
 </body>
 <script>
-console.log("Eat a Cat!");
+const element = document.getElementById("title");
+const container = document.getElementById('top_buttons');
+        if (!container) {
+            throw new Error("Container element not found.");
+        }
+
+        // Create a new button element
+        const btn = document.createElement('button');
+        btn.textContent = 'Start Game'; // Set button text
+        btn.id = 'dynamicButton';     // Optional: set an ID
+
+        // Add a click event listener
+        btn.addEventListener('click', () => {
+        	container.removeChild(btn);
+            //alert('Button clicked!');
+        });
+
+        // Append the button to the container
+        container.appendChild(btn)
+//element.textContent = "slap that cat!";
 </script>
 </html>
